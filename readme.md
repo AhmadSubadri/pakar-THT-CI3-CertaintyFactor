@@ -3,7 +3,7 @@
 2. Kemudian buka folder application - config<br>
 3. Buka file config.php<br>
 4. Rubah bagian $config['base_url'] = 'http://skripsi-mario.test/';<br>
-5. bagian http://skripsi-roselina.test/ sesuaikan dengan url masing masing<br>
+5. bagian http://skripsi-mario.test/ sesuaikan dengan url masing masing<br>
 
 <h2>CONTOH</h2>
 Jika menggunakan XAMPP biasanya link http://localhost/nama_folder_project<br>
