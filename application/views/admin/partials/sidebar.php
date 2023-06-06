@@ -48,19 +48,19 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a class="sidebar-link" href="<?= site_url('bobot') ?>" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-ruler-off"></i>
+                        </span>
+                        <span class="hide-menu">Bobot</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link" href="<?= site_url('data-riwayat') ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-history-toggle"></i>
                         </span>
                         <span class="hide-menu">Data Riwayat</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= site_url('data-rule') ?>" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-ruler-off"></i>
-                        </span>
-                        <span class="hide-menu">Data Rule</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

@@ -19,6 +19,11 @@ $route['gejala/insert'] = 'dashboard/gejala/insert';
 $route['gejala/ubah/(:any)'] = 'dashboard/gejala/edit/$1';
 $route['gejala/delete/(:any)'] = 'dashboard/gejala/delete/$1';
 
+$route['bobot'] = 'dashboard/bobot';
+$route['bobot/insert'] = 'dashboard/bobot/insert';
+$route['bobot/ubah/(:any)'] = 'dashboard/bobot/edit/$1';
+$route['bobot/delete/(:any)'] = 'dashboard/bobot/delete/$1';
+
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -37,7 +37,6 @@ class Gejala_model extends CI_Model
         return $this->db->insert($this->table, $data);
     }
 
-
     public function update($data, $id)
     {
         return $this->db->update($this->table, $data, ['id_gejala' => $id]);
