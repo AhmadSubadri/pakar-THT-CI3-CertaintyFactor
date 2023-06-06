@@ -32,7 +32,7 @@
                         <li class="nav-item px-2"><a class="nav-link <?php if ($this->uri->uri_string() == "kontak") {
                                                                             echo "active";
                                                                         } ?>" href="<?= site_url('kontak'); ?>">Kontak</a></li>
-                    </ul><a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="#!">Sign In</a>
+                    </ul><a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="<?= site_url('login'); ?>">Sign In</a>
                 </div>
             </div>
         </nav>
