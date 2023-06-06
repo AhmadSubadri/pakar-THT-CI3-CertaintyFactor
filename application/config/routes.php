@@ -9,6 +9,16 @@ $route['logout'] = 'login/logout';
 $route['login/check'] = 'login/chek_login';
 $route['dashboard'] = 'dashboard/index';
 
+$route['penyakit'] = 'dashboard/penyakit';
+$route['penyakit/insert'] = 'dashboard/penyakit/insert';
+$route['penyakit/ubah/(:any)'] = 'dashboard/penyakit/edit/$1';
+$route['penyakit/delete/(:any)'] = 'dashboard/penyakit/delete/$1';
+
+$route['gejala'] = 'dashboard/gejala';
+$route['gejala/insert'] = 'dashboard/gejala/insert';
+$route['gejala/ubah/(:any)'] = 'dashboard/gejala/edit/$1';
+$route['gejala/delete/(:any)'] = 'dashboard/gejala/delete/$1';
+
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

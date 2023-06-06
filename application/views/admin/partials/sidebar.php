@@ -31,12 +31,8 @@
                         <span class="hide-menu">Beranda</span>
                     </a>
                 </li>
-                <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">UI COMPONENTS</span>
-                </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= site_url('data-penyakit') ?>" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= site_url('penyakit') ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-article"></i>
                         </span>
@@ -44,7 +40,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= site_url('data-gejala') ?>" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= site_url('gejala') ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-cards"></i>
                         </span>
