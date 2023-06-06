@@ -13,9 +13,9 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nama Anak</th>
-                                <th>Usia Anak</th>
-                                <th>Alamat Anak</th>
+                                <th>Nama</th>
+                                <th>Usia</th>
+                                <th>Alamat</th>
                                 <th>Waktu Konsultasi</th>
                                 <th>Hasil Konsultasi</th>
                                 <th>Detail Konsultasi</th>
@@ -28,9 +28,9 @@
                                 foreach ($data->result() as $item) : ?>
                                     <tr>
                                         <td><?= $i++; ?></td>
-                                        <td><?= $item->nama_anak ?></td>
-                                        <td><?= $item->usia_anak ?></td>
-                                        <td><?= $item->alamat_anak ?></td>
+                                        <td><?= $item->nama ?></td>
+                                        <td><?= $item->usia ?></td>
+                                        <td><?= $item->alamat ?></td>
                                         <td><?= $item->time ?></td>
                                         <td><?= $item->nama_penyakit ?> / <?= $item->nilai_cf ?> %</td>
                                         <td>
