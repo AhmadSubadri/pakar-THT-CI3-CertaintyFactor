@@ -24,6 +24,14 @@ $route['bobot/insert'] = 'dashboard/bobot/insert';
 $route['bobot/ubah/(:any)'] = 'dashboard/bobot/edit/$1';
 $route['bobot/delete/(:any)'] = 'dashboard/bobot/delete/$1';
 
+$route['admin'] = 'dashboard/admin';
+$route['admin/insert'] = 'dashboard/admin/insert';
+$route['admin/ubah/(:any)'] = 'dashboard/admin/edit/$1';
+$route['admin/delete/(:any)'] = 'dashboard/admin/delete/$1';
+
+$route['pasien'] = 'dashboard/pasien';
+$route['pasien/detail/(:any)'] = 'dashboard/pasien/detail/$1';
+
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

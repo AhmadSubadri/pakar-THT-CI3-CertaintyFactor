@@ -56,19 +56,11 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= site_url('data-riwayat') ?>" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-history-toggle"></i>
-                        </span>
-                        <span class="hide-menu">Data Riwayat</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= site_url('data-pasien') ?>" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= site_url('pasien') ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-user-plus"></i>
                         </span>
-                        <span class="hide-menu">Data Pasien</span>
+                        <span class="hide-menu">Riwayat Pasien</span>
                     </a>
                 </li>
                 <li class="nav-small-cap">
@@ -76,7 +68,7 @@
                     <span class="hide-menu">AUTH</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= site_url('data-admin') ?>" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= site_url('admin') ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-user-plus"></i>
                         </span>
