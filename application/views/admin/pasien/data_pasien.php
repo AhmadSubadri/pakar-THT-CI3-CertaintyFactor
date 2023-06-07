@@ -32,7 +32,7 @@
                                         <td><?= $item->usia ?></td>
                                         <td><?= $item->alamat ?></td>
                                         <td><?= $item->time ?></td>
-                                        <td><?= $item->nama_penyakit ?> / <?= $item->nilai_cf ?> %</td>
+                                        <td><?= $item->nama_penyakit ?> (<?= round($item->nilai_cf, 2); ?> %)</td>
                                         <td>
                                             <center>
                                                 <a href="<?= site_url('pasien/detail/' . $item->id_konsultasi) ?>" class="btn btn-sm btn-info" title="Detail"><i class="ti ti-eye"></i></a>

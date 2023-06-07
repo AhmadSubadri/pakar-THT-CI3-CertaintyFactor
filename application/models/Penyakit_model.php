@@ -53,4 +53,14 @@ class Penyakit_model extends CI_Model
         $this->db->where('id_penyakit', $id);
         return $this->db->delete('tb_penyakit');
     }
+
+    public function get_by_id($penyakit_id)
+    {
+        // Lakukan query ke database untuk mendapatkan data penyakit berdasarkan ID
+        $this->db->where('id_penyakit', $penyakit_id);
+        $query = $this->db->get('tb_penyakit');
+
+        // Mengembalikan hasil query dalam bentuk objek atau array
+        return $query->row();
+    }
 }

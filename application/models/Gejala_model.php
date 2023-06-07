@@ -47,4 +47,25 @@ class Gejala_model extends CI_Model
         $this->db->where('id_gejala', $id);
         return $this->db->delete('tb_gejala');
     }
+
+    public function get_data_by_id($gejala_ids)
+    {
+        $this->db->where_in('id_gejala', explode(',', $gejala_ids));
+        $query = $this->db->get('tb_gejala');
+        return $query;
+    }
+
+    public function get_gejala_name($id_gejala)
+    {
+        $this->db->select('nama_gejala');
+        $this->db->where('id_gejala', $id_gejala);
+        $query = $this->db->get('tb_gejala');
+
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            return $row->nama_gejala;
+        }
+
+        return false;
+    }
 }

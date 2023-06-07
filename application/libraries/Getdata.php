@@ -286,5 +286,3 @@ class Getdata extends CI_Controller{
        return $data;
      }
    }
-
-?>

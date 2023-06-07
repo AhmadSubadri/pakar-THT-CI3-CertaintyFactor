@@ -24,4 +24,22 @@ class Pasien_model extends CI_Model
         $query = $this->db->get();
         return $query;
     }
+
+    public function get_no_urut()
+    {
+        $this->db->select('id_konsultasi');
+        $this->db->from('tb_konsultasi');
+        $this->db->order_by('id_konsultasi', 'DESC');
+        return $this->db->get()->first_row();
+    }
+
+    public function save($data)
+    {
+        return $this->db->insert($this->table, $data);
+    }
+
+    public function savedetail($data)
+    {
+        return $this->db->insert($this->table2, $data);
+    }
 }

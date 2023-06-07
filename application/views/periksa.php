@@ -12,14 +12,16 @@
       </div>
       <div class="container">
           <div class="row min-vh-xl-100 min-vh-xxl-25">
-              <div class="bg-holder bg-size" style="background-image:url(assets/img/gallery/people.png);background-position:top center;background-size:contain;">
+              <div class="bg-holder bg-size" style="background-image:url(<?= base_url() ?>assets/asset/img/gallery/people.png);background-position:top center;background-size:contain;">
               </div>
               <h1 class="text-center">PERIKSA</h1>
+              <div class="text-center">
+                  <?php $this->load->view('admin/partials/alert.php'); ?>
+              </div>
               <div class="bg-holder bg-size" style="background-image:url(<?= base_url() ?>assets/asset/img/gallery/dot-bg.png);background-position:bottom right;background-size:auto;">
               </div>
-              <div class="col-lg-4 z-index-2 mb-5"><img class="w-100" src="<?= base_url() ?>assets/asset/img/gallery/appointment.png" alt="..." /></div>
-              <div class="col-lg-8 z-index-2">
-                  <form class="row g-3">
+              <div class="col-lg-12 z-index-2">
+                  <form class="row g-3" action="<?= site_url('periksa') ?>" method="post">
                       <div class="col-md-6">
                           <label class="visually-hidden" for="inputName">Name</label>
                           <input class="form-control form-livedoc-control" name="nama" id="inputName" type="text" placeholder="Name" />
@@ -46,7 +48,7 @@
                       </div>
                       <ul class="list-inline text-center color-a">
                           <li class="list-inline-item mr-2">
-                              <span class="color-text-a">Pilih gejala sesuai kondisi yang terjadi pada anak Anda.</span>
+                              <span class="color-text-a">Pilih gejala sesuai kondisi yang terjadi pada Anda.</span>
                           </li>
                       </ul>
                       <div class="col-md-12">
@@ -55,8 +57,8 @@
                                   <thead>
                                       <tr>
                                           <th>#</th>
-                                          <th>Nama</th>
-                                          <th>Usia</th>
+                                          <th>Nama Gejala</th>
+                                          <th>Kepastian Anda</th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -71,12 +73,12 @@
                                               <td><?= $nama_gejala ?></td>
                                               <td>
                                                   <select name="gejala[]" id="" class="form-control">
+                                                      <option value=<?= $id_gejala . "_0.0" ?>>0 - Tidak Tahu atau Tidak Yakin</option>
                                                       <option value=<?= $id_gejala . "_1.0" ?>>1.0 - Pasti Ya</option>
                                                       <option value=<?= $id_gejala . "_0.8" ?>>0.8 - Hampir Pasti</option>
                                                       <option value=<?= $id_gejala . "_0.6" ?>>0.6 - Kemungkinan Besar</option>
                                                       <option value=<?= $id_gejala . "_0.4" ?>>0.4 - Mungkin</option>
                                                       <option value=<?= $id_gejala . "_0.2" ?>>0.2 - Hampir Mungkin</option>
-                                                      <option value=<?= $id_gejala . "_0" ?>>0 - Tidak Tahu atau Tidak Yakin</option>
                                                   </select>
                                               </td>
                                           </tr>

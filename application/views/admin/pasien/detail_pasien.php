@@ -23,11 +23,11 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td><?php echo $data['nama_anak']; ?></td>
-                                <td><?php echo $data['usia_anak']; ?></td>
-                                <td><?php echo $data['alamat_anak']; ?></td>
-                                <td><?php echo $data['time']; ?></td>
-                                <td><?php echo $data['nama_penyakit']; ?> / <?php echo $data['nilai_cf']; ?> %</td>
+                                <td><?= $data['nama']; ?></td>
+                                <td><?= $data['usia']; ?></td>
+                                <td><?= $data['alamat']; ?></td>
+                                <td><?= $data['time']; ?></td>
+                                <td><?= $data['nama_penyakit']; ?> (<?= round($data['nilai_cf'], 2); ?> %)</td>
                             </tr>
                         </tbody>
                     </table>
@@ -62,7 +62,21 @@
                                     <tr>
                                         <td><?= $i++; ?></td>
                                         <td><?= $item->nama_gejala ?></td>
-                                        <td><?php if ($item->nilai == "0") { ?>Tidak<?php } elseif ($item->nilai == "1.0") { ?>Pasti<?php } ?>
+                                        <td>
+                                            <?php if ($item->nilai == "0") { ?>
+                                                Tidak Tahu atau Tidak Yakin
+                                            <?php } elseif ($item->nilai == "1.0") { ?>
+                                                Pasti Ya
+                                            <?php } elseif ($item->nilai == "0.8") {  ?>
+                                                Hampir Pasti
+                                            <?php } elseif ($item->nilai == "0.6") {  ?>
+                                                Kemungkinan Besar
+                                            <?php } elseif ($item->nilai == "0.4") {  ?>
+                                                Mungkin
+                                            <?php } elseif ($item->nilai == "0.2") {  ?>
+                                                Hampir Mungkin
+                                            <?php } ?>
+
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
