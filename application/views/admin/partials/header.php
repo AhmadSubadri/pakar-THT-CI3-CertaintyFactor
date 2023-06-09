@@ -1,5 +1,5 @@
 <!--  Header Start -->
-<header class="app-header shadow">
+<header class="app-header shadow" style="background-color: #B2DDED;">
     <nav class="navbar navbar-expand-lg navbar-light">
         <ul class="navbar-nav">
             <li class="nav-item d-block d-xl-none">
