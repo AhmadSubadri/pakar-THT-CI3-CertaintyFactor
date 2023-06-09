@@ -3,7 +3,7 @@
         <div class="card w-100">
             <a href="<?= site_url('pasien'); ?>" class="btn btn-sm btn-warning">Kembali</a>
             <div class="card-body">
-                <div class="d-sm-flex d-block align-items-center justify-content-between mb-9 alert alert-success">
+                <div class="d-sm-flex d-block align-items-center justify-content-between mb-9 alert">
                     <div class="mb-3 mb-sm-0">
                         <h5 class="card-title fw-semibold">Detail Data Pasien</h5>
                     </div>
@@ -40,7 +40,7 @@
     <div class="col-lg-12 d-flex align-items-strech">
         <div class="card w-100">
             <div class="card-body">
-                <div class="d-sm-flex d-block align-items-center justify-content-between mb-9 alert alert-success">
+                <div class="d-sm-flex d-block align-items-center justify-content-between mb-9 alert">
                     <div class="mb-3 mb-sm-0">
                         <h5 class="card-title fw-semibold">Gejala yang dipilih :</h5>
                     </div>

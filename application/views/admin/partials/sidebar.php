@@ -1,4 +1,4 @@
-<aside class="left-sidebar">
+<aside class="left-sidebar" style="background-image: url(<?= base_url() ?>assets/asset/img/gallery/hero-bg.png);">
     <div>
         <div class="justify-content-center navbar">
             <ul class="navbar-nav align-items-center justify-content-center">

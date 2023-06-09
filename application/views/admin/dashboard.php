@@ -1,7 +1,7 @@
 <?php $this->load->view('admin/partials/alert.php'); ?>
 <div class="row">
     <div class="col-lg-4">
-        <div class="card overflow-hidden">
+        <div class="card overflow-hidden" style="background-color: greenyellow;">
             <div class="card-body p-4">
                 <div class="row align-items-center">
                     <div class="col-12">
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="col-lg-4">
-        <div class="card overflow-hidden">
+        <div class="card overflow-hidden" style="background-color: red;">
             <div class="card-body p-4">
                 <div class="row align-items-center">
                     <div class="col-12">
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="col-lg-4">
-        <div class="card overflow-hidden">
+        <div class="card overflow-hidden" style="background-color: yellow;">
             <div class="card-body p-4">
                 <div class="row align-items-center">
                     <div class="col-12">
