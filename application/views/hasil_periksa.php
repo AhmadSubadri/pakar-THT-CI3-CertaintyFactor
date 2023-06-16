@@ -104,7 +104,8 @@
                 </ul>
                 <div class="color-text-a">
                     <p>
-                        Berdasarkan gejalanya, pasien diprediksi mengidap penyakit <b><?= $output['nama_penyakit']; ?></b> dengan tingkat kepercayaan <b><?= round($output['cfPersentase'], 2); ?> %</b>.
+                        Berdasarkan gejalanya, pasien diprediksi mengidap penyakit <b><?= $output['nama_penyakit']; ?></b> dengan tingkat kepercayaan <b><?= round($output['cfPersentase'], 2); ?> %</b>.<br>
+                        <b><?= $output['keterangan']; ?></b>
                     </p>
                     <p style="font-style: bold; color: red; font-size: 13px;">*Hasil konsultasi ini masih membutuhkan pemeriksaan lebih lanjut.</p>
                 </div>
