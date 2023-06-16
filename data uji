@@ -1,0 +1,51 @@
+Tabel Gejala
+id_gejala | nama_gejala
+
+---
+
+1 | Gejala A
+2 | Gejala B
+3 | Gejala C
+4 | Gejala D
+5 | Gejala E
+
+Tabel Penyakit
+id_penyakit | nama_penyakit | keterangan
+
+---
+
+1 | Penyakit X | Keterangan penyakit X
+2 | Penyakit Y | Keterangan penyakit Y
+3 | Penyakit Z | Keterangan penyakit Z
+
+tb_gabungan
+id_gabungan id_penyakit id_gejala cf_rule
+1 | 1 | 1 | 0.8
+2 | 1 | 2 | 0.6
+3 | 1 | 3 | 0.4
+4 | 2 | 2 | 1
+5 | 2 | 4 | 0.8
+6 | 3 | 3 | 0.6
+7 | 3 | 5 | 0.4
+
+asumsi pasien
+
+1 | Gejala A | 0.8 - Hampir Pasti
+2 | Gejala B | 0.6 - Kemungkinan Besar
+3 | Gejala C | 0.4 - mungkin
+4 | Gejala D | 1.0 - Pasti Ya
+5 | Gejala E | 0.2 - Hampir Mungkin
+
+asumsi pasien
+
+1 | Gejala A | 0.8 - Hampir Pasti
+2 | Gejala B | 0.6 - Kemungkinan Besar
+3 | Gejala C | 0.8 - Hampir Pasti
+4 | Gejala D | 0.2 - Hampir Mungkin
+5 | Gejala E | 0.4 - Mungkin
+
+1 | Gejala A | 0.6 - Kemungkinan Besar
+2 | Gejala B | 0.4 - mungkin
+3 | Gejala C | 0.8 - Hampir Pasti
+4 | Gejala D | 0.2 - Hampir Mungkin
+5 | Gejala E | 0.6 - Kemungkinan Besar

@@ -13,6 +13,11 @@ class Gejala_model extends CI_Model
             [
                 'field' => 'nama_gejala',
                 'label' => 'gejala',
+                'rules' => 'required'
+            ],
+            [
+                'field' => 'kode_gejala',
+                'label' => 'kode gejala',
                 'rules' => 'required|is_unique[tb_gejala.nama_gejala]'
             ],
         ];
@@ -53,6 +58,21 @@ class Gejala_model extends CI_Model
         $this->db->where_in('id_gejala', explode(',', $gejala_ids));
         $query = $this->db->get('tb_gejala');
         return $query;
+    }
+
+    public function getCfGejala($gejala_ids)
+    {
+        $query = $this->db->select('cf_rule')
+            ->from('tb_gabungan')
+            ->where('id_gejala', $gejala_ids)
+            ->get();
+
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            return $row->cf_rule;
+        } else {
+            return 0; // Jika tidak ditemukan, return nilai CF gejala 0
+        }
     }
 
     public function get_gejala_name($id_gejala)

@@ -35,7 +35,8 @@
                                         <td><?= $item->nama_penyakit ?> (<?= round($item->nilai_cf, 2); ?> %)</td>
                                         <td>
                                             <center>
-                                                <a href="<?= site_url('pasien/detail/' . $item->id_konsultasi) ?>" class="btn btn-sm btn-info" title="Detail"><i class="ti ti-eye"></i></a>
+                                                <a href="<?= site_url('pasien/detail/' . $item->uniq_id) ?>" class="btn btn-sm btn-info" title="Detail"><i class="ti ti-eye"></i></a>
+                                                <a href="<?= site_url('pasien/delete/' . $item->uniq_id) ?>" onclick="return confirm('Apakah anda yakin akan menghapus data?');" class="btn btn-sm btn-danger" title="Delete"><i class="ti ti-trash"></i></a>
                                             </center>
                                         </td>
                                     </tr>

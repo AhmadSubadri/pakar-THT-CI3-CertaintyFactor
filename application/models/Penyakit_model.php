@@ -11,14 +11,19 @@ class Penyakit_model extends CI_Model
     {
         return [
             [
+                'field' => 'kode_penyakit',
+                'label' => 'Kode Penyakti',
+                'rules' => 'required|is_unique[tb_penyakit.kode_penyakit]'
+            ],
+            [
                 'field' => 'nama_penyakit',
                 'label' => 'penyakit',
-                'rules' => 'required|is_unique[tb_penyakit.nama_penyakit]'
+                'rules' => 'required'
             ],
             [
                 'field' => 'keterangan',
                 'label' => 'keterangan',
-                'rules' => 'required|is_unique[tb_penyakit.keterangan]'
+                'rules' => 'required'
             ],
         ];
     }
@@ -62,5 +67,12 @@ class Penyakit_model extends CI_Model
 
         // Mengembalikan hasil query dalam bentuk objek atau array
         return $query->row();
+    }
+
+    public function get_penyakit_name($id_penyakit)
+    {
+        $this->db->select('nama_penyakit, keterangan');
+        $this->db->where('id_penyakit', $id_penyakit);
+        return $this->db->get('tb_penyakit');
     }
 }

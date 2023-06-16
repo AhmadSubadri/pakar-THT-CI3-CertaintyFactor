@@ -16,9 +16,9 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>kode penyakit</th>
                                 <th>Nama Penyakit</th>
                                 <th>Keterangan Penyakit</th>
-                                <th>Penginput</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -29,9 +29,9 @@
                                 foreach ($data->result() as $item) : ?>
                                     <tr>
                                         <td><?= $i++; ?></td>
+                                        <td><?= $item->kode_penyakit; ?></td>
                                         <td><?= $item->nama_penyakit; ?></td>
                                         <td><?= word_limiter($item->keterangan, 30); ?></td>
-                                        <td><?php if ($item->id_penginput > 0 && $item->id_penginput <= 5) { ?>Admin<?php } else if ($item->id_penginput > 5 && $item->id_penginput <= 10) { ?>Pakar<?php } ?></td>
                                         <td>
                                             <center>
                                                 <a href="<?= site_url('penyakit/ubah/' . $item->id_penyakit) ?>" class="btn btn-sm btn-info" title="Edit"><i class="ti ti-edit"></i></a>

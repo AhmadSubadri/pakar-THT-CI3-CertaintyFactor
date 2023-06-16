@@ -21,24 +21,42 @@ class Bobot_model extends CI_Model
                 'rules' => 'required'
             ],
             [
-                'field' => 'nilai_mb',
-                'label' => 'Nilai MB',
+                'field' => 'cf_rule',
+                'label' => 'Nilai Cf Rule',
                 'rules' => 'required'
             ],
-            [
-                'field' => 'nilai_md',
-                'label' => 'Nilai MD',
-                'rules' => 'required'
-            ]
         ];
     }
+
+    public function getPenyakitCf($gejalaId, $id_penyakit)
+    {
+        $this->db->select('cf_rule');
+        $this->db->from('tb_gabungan');
+        $this->db->where('id_gejala', $gejalaId);
+        $this->db->where('id_penyakit', $id_penyakit);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    // public function getPenyakitCf($gejalaIds)
+    // {
+    //     // Ambil nilai CF[Rule] dari tabel Aturan berdasarkan gejala yang diamati
+    //     $this->db->select('id_penyakit, cf_rule');
+    //     $this->db->from('tb_gabungan');
+    //     $this->db->where_in('id_gejala', explode(',', $gejalaIds));
+    //     $query = $this->db->get();
+
+    //     if ($query->num_rows() > 0) {
+    //         return $query->result_array();
+    //     } else {
+    //         return 0; // Nilai default jika tidak ada basis pengetahuan yang sesuai
+    //     }
+    // }
 
     public function get_data()
     {
         $this->db->select('*')->from('tb_gabungan')
             ->join('tb_gejala', 'tb_gabungan.id_gejala = tb_gejala.id_gejala')
-            ->join('tb_penyakit', 'tb_gabungan.id_penyakit = tb_penyakit.id_penyakit')
-            ->join('tb_admin', 'tb_gabungan.id_penginput = tb_admin.id_admin');
+            ->join('tb_penyakit', 'tb_gabungan.id_penyakit = tb_penyakit.id_penyakit');
         $query = $this->db->get();
         return $query;
     }
@@ -50,18 +68,25 @@ class Bobot_model extends CI_Model
         return $query->row();
     }
 
-    // public function get_by_gejala($gejala_ids)
-    // {
-    //     $this->db->where_in('tb_gabungan.id_gejala', explode(',', $gejala_ids))->join('tb_penyakit', 'tb_penyakit.id_penyakit = tb_gabungan.id_penyakit');
-    //     return $this->db->get('tb_gabungan');
-    // }
+    public function get_nilai_cf($id_penyakit, $id_gejala)
+    {
+        $this->db->select('cf_rule');
+        $this->db->from('tb_gabungan');
+        $this->db->where('id_penyakit', $id_penyakit);
+        $this->db->where('id_gejala', $id_gejala);
+        $query = $this->db->get();
 
-    // public function get_gejala_by_penyakit($id_penyakit, $gejala_ids)
-    // {
-    //     $this->db->where('id_penyakit', $id_penyakit);
-    //     $this->db->where_in('id_gejala', explode(',', $gejala_ids));
-    //     return $this->db->get('tb_gabungan');
-    // }
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            $cf_rule = $row->cf_rule;
+
+            return [
+                'cf_rule' => $cf_rule,
+            ];
+        }
+
+        return null;
+    }
 
     public function get_by_gejala($gejala)
     {
@@ -78,9 +103,24 @@ class Bobot_model extends CI_Model
         return $this->db->query($sql);
     }
 
+    public function get_cf_rule($gejalaId, $penyakitId)
+    {
+        $this->db->select('cf_rule');
+        $this->db->from('tb_gabungan');
+        $this->db->where('id_gejala', $gejalaId);
+        $this->db->where('id_penyakit', $penyakitId);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            return $query->row()->cf_rule;
+        } else {
+            return 0;
+        }
+    }
+
     public function get_gejala_by_penyakit($id, $gejala = null)
     {
-        $sql = "SELECT gb.id_gejala, gb.nilai_mb, gb.nilai_md, gjl.nama_gejala
+        $sql = "SELECT gb.id_gejala, gb.cf_rule, gjl.nama_gejala
         FROM tb_gabungan AS gb
         INNER JOIN tb_gejala AS gjl ON gjl.id_gejala = gb.id_gejala
         WHERE id_penyakit = " . $id;
@@ -92,6 +132,16 @@ class Bobot_model extends CI_Model
 
         return $this->db->query($sql);
     }
+
+    public function get_aturan_by_gejala($gejala_ids)
+    {
+        $this->db->select('id_gabungan, id_penyakit, id_gejala, cf_rule');
+        $this->db->from('tb_gabungan');
+        $this->db->where_in('id_gejala', $gejala_ids);
+        $query = $this->db->get();
+        return $query;
+    }
+
 
     public function loadgejala()
     {

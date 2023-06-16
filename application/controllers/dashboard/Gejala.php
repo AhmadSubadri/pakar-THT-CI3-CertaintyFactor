@@ -35,16 +35,9 @@ class Gejala extends CI_Controller
                 $this->load->view('admin/gejala/add');
                 $this->load->view('admin/partials/footer');
             } else {
-                $level = $this->session->userdata('level');
-                if ($level == "admin") {
-                    $penginput = $this->session->userdata('id_admin');
-                } else if ($level == "pakar") {
-                    $penginput = $this->session->userdata('id_pakar');
-                }
                 $data = array(
                     'nama_gejala'     => $this->input->post('nama_gejala', TRUE),
-                    'id_penginput'      => $penginput,
-                    'level_penginput'   => $level,
+                    'kode_gejala'      => $this->input->post('kode_gejala', TRUE),
                 );
                 $this->m_gejala->save($data);
                 $this->session->set_flashdata('msg', "Insert Success!.");
@@ -70,16 +63,9 @@ class Gejala extends CI_Controller
                 $this->load->view('admin/gejala/edit', $data);
                 $this->load->view('admin/partials/footer', $data);
             } else {
-                $level = $this->session->userdata('level');
-                if ($level == "admin") {
-                    $penginput = $this->session->userdata('id_admin');
-                } else if ($level == "pakar") {
-                    $penginput = $this->session->userdata('id_pakar');
-                }
                 $data = array(
                     'nama_gejala'     => $this->input->post('nama_gejala', TRUE),
-                    'id_penginput'      => $penginput,
-                    'level_penginput'   => $level,
+                    'kode_gejala'      => $this->input->post('kode_gejala', TRUE),
 
                 );
                 $this->m_gejala->update($data, $id_gejala);

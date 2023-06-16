@@ -43,7 +43,7 @@
                             </button>
                         </div>
                         <div class="col-sm-6">
-                            <a href="<?= site_url('admin') ?>" class="btn btn-sm btn-danger m-1">Cancle</a>
+                            <a href="<?= site_url('admin') ?>" class="btn btn-sm btn-danger m-1">Cancel</a>
                         </div>
                     </div>
                 </form>
