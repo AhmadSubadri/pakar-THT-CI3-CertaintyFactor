@@ -12,6 +12,15 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Kode Penyakit</label>
+                                <input type="text" placeholder="Kode Penyakit *" class="form-control" name="kode_penyakit" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <div id="emailHelp" class="form-text text-danger">
+                                    <?= form_error('kode_penyakit') ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Penyakit</label>
                                 <input type="text" placeholder="Nama Penyakit *" class="form-control" name="nama_penyakit" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                 <div id="emailHelp" class="form-text text-danger">
@@ -34,7 +43,7 @@
                             </button>
                         </div>
                         <div class="col-sm-6">
-                            <a href="<?= site_url('penyakit') ?>" class="btn btn-sm btn-danger m-1">Cancle</a>
+                            <a href="<?= site_url('penyakit') ?>" class="btn btn-sm btn-danger m-1">Cancel</a>
                         </div>
                     </div>
                 </form>

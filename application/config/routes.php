@@ -31,6 +31,7 @@ $route['admin/delete/(:any)'] = 'dashboard/admin/delete/$1';
 
 $route['pasien'] = 'dashboard/pasien';
 $route['pasien/detail/(:any)'] = 'dashboard/pasien/detail/$1';
+$route['pasien/delete/(:any)'] = 'dashboard/pasien/delete/$1';
 
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';

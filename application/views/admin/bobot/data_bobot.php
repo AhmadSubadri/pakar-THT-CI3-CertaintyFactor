@@ -18,9 +18,7 @@
                                 <th>#</th>
                                 <th>Penyakit</th>
                                 <th>Gejala</th>
-                                <th>Nilai MB</th>
-                                <th>Nilai MD</th>
-                                <th>Nama Penginput</th>
+                                <th>CF Rule</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -33,9 +31,7 @@
                                         <td><?= $i++; ?></td>
                                         <td><?= $item->nama_penyakit ?></td>
                                         <td><?= $item->nama_gejala ?></td>
-                                        <td><?= $item->nilai_mb ?></td>
-                                        <td><?= $item->nilai_md ?></td>
-                                        <td><?= $item->nama ?></td>
+                                        <td><?= $item->cf_rule ?></td>
                                         <td>
                                             <center>
                                                 <a href="<?= site_url('bobot/ubah/' . $item->id_gabungan) ?>" class="btn btn-sm btn-info" title="Edit"><i class="ti ti-edit"></i></a>

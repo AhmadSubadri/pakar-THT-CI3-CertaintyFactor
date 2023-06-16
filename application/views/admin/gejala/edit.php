@@ -12,6 +12,15 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Kode Gejala</label>
+                                <input type="text" placeholder="Kode gejala *" class="form-control" value="<?= $data->kode_gejala; ?>" name="kode_gejala" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <div id="emailHelp" class="form-text text-danger">
+                                    <?= form_error('kode_gejala') ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama gejala</label>
                                 <input type="text" placeholder="Nama gejala *" class="form-control" value="<?= $data->nama_gejala; ?>" name="nama_gejala" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                 <div id="emailHelp" class="form-text text-danger">
@@ -25,7 +34,7 @@
                             </button>
                         </div>
                         <div class="col-sm-6">
-                            <a href="<?= site_url('gejala') ?>" class="btn btn-sm btn-danger m-1">Cancle</a>
+                            <a href="<?= site_url('gejala') ?>" class="btn btn-sm btn-danger m-1">Cancel</a>
                         </div>
                     </div>
                 </form>

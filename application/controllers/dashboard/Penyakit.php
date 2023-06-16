@@ -37,17 +37,10 @@ class Penyakit extends CI_Controller
             } else {
                 date_default_timezone_set("Asia/Jakarta");
                 $time = date('Y-m-d');
-                $level = $this->session->userdata('level');
-                if ($level == "admin") {
-                    $penginput = $this->session->userdata('id_admin');
-                } else if ($level == "pakar") {
-                    $penginput = $this->session->userdata('id_pakar');
-                }
                 $data = array(
                     'nama_penyakit'     => $this->input->post('nama_penyakit', TRUE),
                     'keterangan'        => $this->input->post('keterangan', FALSE),
-                    'id_penginput'      => $penginput,
-                    'level_penginput'   => $level,
+                    'kode_penyakit'      => $this->input->post('kode_penyakit', TRUE),
                     'date'              => $time
                 );
                 $this->m_penyakit->save($data);
@@ -76,17 +69,10 @@ class Penyakit extends CI_Controller
             } else {
                 date_default_timezone_set("Asia/Jakarta");
                 $inptanggal = date('Y-m-d');
-                $level = $this->session->userdata('level');
-                if ($level == "admin") {
-                    $penginput = $this->session->userdata('id_admin');
-                } else if ($level == "pakar") {
-                    $penginput = $this->session->userdata('id_pakar');
-                }
                 $data = array(
                     'nama_penyakit'     => $this->input->post('nama_penyakit', TRUE),
                     'keterangan'        => $this->input->post('keterangan', TRUE),
-                    'id_penginput'      => $penginput,
-                    'level_penginput'   => $level,
+                    'kode_penyakit'      => $this->input->post('kode_penyakit', TRUE),
                     'date'              => $inptanggal
 
                 );

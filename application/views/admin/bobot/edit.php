@@ -51,35 +51,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nilai Kepastian (MB)</label>
-                                <select class="form-select" id="exampleInputEmail1" name="nilai_mb">
-                                    <option value="1.0" <?= ("1.0" == $data->nilai_mb) ? 'selected' : ''; ?>>1.0 - Pasti Ya</option>
-                                    <option value="0.8" <?= ("0.8" == $data->nilai_mb) ? 'selected' : ''; ?>>0.8 - Hampir Pasti</option>
-                                    <option value="0.6" <?= ("0.6" == $data->nilai_mb) ? 'selected' : ''; ?>>0.6 - Kemungkinan Besar</option>
-                                    <option value="0.4" <?= ("0.4" == $data->nilai_mb) ? 'selected' : ''; ?>>0.4 - Mungkin</option>
-                                    <option value="0.2" <?= ("0.2" == $data->nilai_mb) ? 'selected' : ''; ?>>0.2 - Hampir Mungkin</option>
-                                    <option value="0" <?= ("0" == $data->nilai_mb) ? 'selected' : ''; ?>>0 - Tidak Tahu atau Tidak Yakin</option>
+                                <label for="exampleInputEmail1" class="form-label">Nilai CF Rule</label>
+                                <select class="form-select" id="exampleInputEmail1" name="cf_rule">
+                                    <option value="1.0" <?= ("1.0" == $data->cf_rule) ? 'selected' : ''; ?>>1.0 - Pasti Ya</option>
+                                    <option value="0.8" <?= ("0.8" == $data->cf_rule) ? 'selected' : ''; ?>>0.8 - Hampir Pasti</option>
+                                    <option value="0.6" <?= ("0.6" == $data->cf_rule) ? 'selected' : ''; ?>>0.6 - Kemungkinan Besar</option>
+                                    <option value="0.4" <?= ("0.4" == $data->cf_rule) ? 'selected' : ''; ?>>0.4 - Mungkin</option>
+                                    <option value="0.2" <?= ("0.2" == $data->cf_rule) ? 'selected' : ''; ?>>0.2 - Hampir Mungkin</option>
+                                    <option value="0" <?= ("0" == $data->cf_rule) ? 'selected' : ''; ?>>0 - Tidak Tahu atau Tidak Yakin</option>
                                 </select>
                                 <div id="emailHelp" class="form-text text-danger">
-                                    <?= form_error('nilai_mb') ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nilai Ketidakpastian (MD)</label>
-                                <select class="form-select" id="exampleInputEmail1" name="nilai_md">
-                                    <option value="1.0" <?= ("1.0" == $data->nilai_md) ? 'selected' : ''; ?>>1.0 - Pasti Ya</option>
-                                    <option value="0.8" <?= ("0.8" == $data->nilai_md) ? 'selected' : ''; ?>>0.8 - Hampir Pasti</option>
-                                    <option value="0.6" <?= ("0.6" == $data->nilai_md) ? 'selected' : ''; ?>>0.6 - Kemungkinan Besar</option>
-                                    <option value="0.4" <?= ("0.4" == $data->nilai_md) ? 'selected' : ''; ?>>0.4 - Mungkin</option>
-                                    <option value="0.2" <?= ("0.2" == $data->nilai_md) ? 'selected' : ''; ?>>0.2 - Hampir Mungkin</option>
-                                    <option value="0" <?= ("0" == $data->nilai_mb) ? 'selected' : ''; ?>>0 - Tidak Tahu atau Tidak Yakin</option>
-                                </select>
-                                <div id="emailHelp" class="form-text text-danger">
-                                    <?= form_error('nilai_md') ?>
+                                    <?= form_error('cf_rule') ?>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +73,7 @@
                             </button>
                         </div>
                         <div class="col-sm-6">
-                            <a href="<?= site_url('bobot') ?>" class="btn btn-sm btn-danger m-1">Cancle</a>
+                            <a href="<?= site_url('bobot') ?>" class="btn btn-sm btn-danger m-1">Cancel</a>
                         </div>
                     </div>
                 </form>

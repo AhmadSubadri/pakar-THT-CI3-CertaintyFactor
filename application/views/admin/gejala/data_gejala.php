@@ -16,8 +16,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Kode Gejala</th>
                                 <th>Nama Gejala</th>
-                                <th>Penginput</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -28,8 +28,8 @@
                                 foreach ($data->result() as $item) : ?>
                                     <tr>
                                         <td><?= $i++; ?></td>
+                                        <td><?= $item->kode_gejala; ?></td>
                                         <td><?= $item->nama_gejala ?></td>
-                                        <td><?php if ($item->level_penginput == "admin") { ?>Admin<?php } else if ($item->level_penginput == "pakar") { ?>Pakar<?php } ?></td>
                                         <td>
                                             <center>
                                                 <a href="<?= site_url('gejala/ubah/' . $item->id_gejala) ?>" class="btn btn-sm btn-info" title="Edit"><i class="ti ti-edit"></i></a>

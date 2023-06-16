@@ -29,11 +29,20 @@ class Pasien extends CI_Controller
     public function detail($id)
     {
         $data = [
-            'data' => $this->db->get_where('tb_konsultasi', array('id_konsultasi' => $id))->row_array(),
+            'data' => $this->db->get_where('tb_konsultasi', array('uniq_id' => $id))->row_array(),
             'detail' => $this->m_pasien->get_detail($id),
         ];
         $this->load->view('admin/partials/head', $data);
         $this->load->view('admin/pasien/detail_pasien', $data);
         $this->load->view('admin/partials/footer', $data);
+    }
+
+    public function delete($id)
+    {
+        $this->session->set_flashdata('msg', "Delete Success!.");
+        $this->session->set_flashdata('msg_class', 'alert-success');
+        $this->db->delete('tb_konsultasi', ['uniq_id' => $id]);
+        $this->db->delete('tb_detail_konsultasi', ['id_konsultasi' => $id]);
+        redirect('pasien');
     }
 }
